@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Brian's Portfolio</title>
+        <!--ScriptSrc-->
+        <script src="https://cdn.jsdelivr.net/npm/stats-js@1.0.1/build/stats.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.min.js" integrity="sha512-Q+IG0h7As6sfqE2t1Xf5IeamNyCXb4EXxGCA9Mlbpv7xtwurVHNdVDbyWeSQ3ulPf2FRlqeu77Ec3SJDdIR63w==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js" integrity="sha512-LF8ZB1iTwi4Qvkm4pekHG4a437Y9Af5ZuwbnW4GTbAWQeR2E4KW8WF+xH8b9psevV7wIlDMx1MH9YfPqgKhA/Q==" crossorigin="anonymous"></script>
+        <!--Styles-->
+        <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">  
+        <link href="css/style.css" type="text/css" rel="stylesheet"/>
+        <style>
+            html, body{
+                padding: 0;
+                margin: 0;
+                font-size: 16px;
+                font-family: 'Open Sans', sans-serif;
+                overflow: hidden;
+            }
+            nav{
+                background-color: transparent !important; 
+            }
+            @media screen and (max-width: 768px) {
+                :root{
+                    font-size: 14px;
+                }
+            }
+            .moveGUI { position: absolute; bottom: 0; right: 0; z-index: 4;}
+            .close-button {display: none}
+        </style>
+    </head>
+    <body>
+        <div class="loader">
+            <div id="lm"></div>
+            <div class="loading">
+                Loading...
+            </div>
+        </div>
+        <div class="moveGUI"></div>
+        <nav>
+            <h1>
+                Brian Sun
+            </h1>
+            <ul >
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="space" id="space"></div>
+        <div class="accordion">
+            <input type="radio" name="select" class="accordion-select" id="selectHome"/>
+            <div class="accordion-title" id="titleHome">
+                <span>
+                    Home
+                </span>
+            </div> 
+            <div class="oneExpand">
+                <h2 id="one-one">
+                    1.1
+                    <span>
+                        &nbsp;&nbsp;Violin + Orchestra
+                    </span>
+                </h2>
+                <h2 id="one-two">
+                    1.2
+                    <span>
+                        &nbsp;&nbsp;Engineering
+                    </span>
+                </h2>
+                <h2 id="one-three">
+                    1.3
+                    <span>
+                        &nbsp;&nbsp;Computer &nbsp;&nbsp;Programming
+                    </span>
+                </h2>
+            </div>
+            <input type="radio" name="select" class="accordion-select" id="selectOne"/>
+            <div class="accordion-title" id="titleOne">
+                <span>
+                    1
+                </span>
+            </div>
+            <div class="accordion-content" id="contentOne">
+                Main Interests
+            </div> 
+            <div class="twoExpand">
+                <h2 id="two-one">
+                    2.1
+                    <span>
+                        &nbsp;&nbsp; Science Olmypiad
+                    </span>
+                </h2>
+                <h2 id="two-two">
+                    2.2
+                    <span>
+                        &nbsp;&nbsp; Community Service
+                    </span>
+                </h2>
+                <h2 id="two-three">
+                    2.3
+                    <span>
+                        &nbsp;&nbsp; Public Speaking
+                    </span>
+                </h2>
+                <h2 id="two-four">
+                    2.4
+                    <span>
+                        &nbsp;&nbsp; Debate
+                    </span>
+                </h2>
+                <h2 id="two-five">
+                    2.5
+                    <span>
+                        &nbsp;&nbsp; Math
+                    </span>
+                </h2>
+            </div>
+            <input type="radio" name="select" class="accordion-select" id="selectTwo"/>
+            <div class="accordion-title" id="titleTwo">
+                <span>
+                    2
+                </span>
+            </div>
+            <div class="accordion-content" id="contentTwo">
+                Extracurricular Activites
+            </div> 
+            <div class="threeExpand">
+                <h2 id="three-one">
+                    3.1
+                    <span>
+                        &nbsp;&nbsp; Heritage
+                    </span>
+                </h2>
+                <!--Sun-->
+                <h2 id="three-two">
+                    3.2
+                    <span>
+                        &nbsp;&nbsp; Sports
+                    </span>
+                </h2>
+                <!--Mercury-->
+                <h2 id="three-three">
+                    3.3
+                    <span>
+                        &nbsp;&nbsp; Conclusion
+                    </span>
+                </h2>
+                <!--Pluto-->
+            </div>
+            <input type="radio" name="select" class="accordion-select" id="selectThree"/>
+            <div class="accordion-title" id="titleThree">
+                <span>
+                    3
+                </span>
+            </div>
+            <div class="accordion-content" id="contentThree">
+                Other
+            </div> 
+        </div> 
+        <div class="instructions">
+            <h3>
+                Scroll to zoom in/out, click and drag to change camera angle. <br>
+                Use the navigation at the bottom-left to change scenes. <br>
+                Some scenes will have more navigation on the left of your screen. <br>
+                There is a speed setting below and data in the top-left. <br>
+            </h3>
+        </div>
+        <h1 class="home-intro" style="display: none">
+            Welcome!
+        </h1>
+        <h2 class="home-description" style="display: none">
+            The solar system is my life.
+            <br>
+            Each planet is a part of it.
+            <br>
+            Explore & Enjoy! 
+        </h2>
+        <h3 class="nav-intro">
+            Use this navigation menu to explore my portfolio!
+        </h3>
+        <h2 class="responsiveness">
+            Note: This webpage wasn't designed for mobile users. For best performance, please use a larger screen and a more powerful processor. 
+        </h2>
+        <h1 class="main-interests-title" style="display: none">
+            Main Interests
+        </h1>
+        <h2 class="main-interests-subtitle" style="display: none">
+            My main interests, Playing Violin, Aerospace Engineering, and Computer Programming, are what I'm most proud of about myself. Enjoy!
+        </h2>
+        <h1 class="extracurriculars-title" style="display: none">
+            Extracurriculars
+        </h1>
+        <h2 class="extracurriculars-subtitle" style="display: none">
+            Outside of school I participate in many extracurricular activities. Some of them are on this website. Go explore them!
+        </h2>
+        <h1 class="other-title" style="display: none">
+            Other Stuff
+        </h1>
+        <h2 class="other-subtitle" style="display: none">
+            The content under this category is what I want in my website but don’t fit into the other categories. Enjoy!
+        </h2>
+        <div class="blur"></div>
+        <div class="portfolio-content">
+            <div class="content-item">
+                <h1 class="content-item-title" id="violin">
+                    Violin + Orchestra
+                </h1>
+                <div class="content-item-class" id="violin-class">
+                    <div>
+                        <h2>
+                            4
+                        </h2>
+                        <p>
+                            <b>Years</b> of experience
+                        </p>
+                    </div>
+                    <div>
+                        <h2>
+                            5
+                        </h2>
+                        <p>
+                            <b>Orchestras</b> I participated in
+                        </p>
+                    </div>
+                    <div>
+                        <h2>
+                            45
+                        </h2>
+                        <p>
+                            <b>Minutes</b> of practice every day
+                        </p>
+                    </div>
+                </div>
+                <div class="content-item-text" id="violin-text">
+                    One of my passions is playing the violin. I started taking piano lessons at 6, then switched to violin at 9 years old. I still take private violin lessons every week. I currently participate in my school orchestra and the Youth Orchestra of Central Jersey. I was also accepted into the Central Jersey Regions Orchestra in 7th grade. I plan to continue making music for the rest of my life. 
+                </div>
+            </div>
+            <div class="content-item">
+                <h1 class="content-item-title" id="aerospace">
+                    Aerospace Engineering
+                </h1>
+                <div class="content-item-class" id="aerospace-class">
+                    
+                </div>
+                <div class="content-item-text" id="aerospace-text">
+                    As an aspiring aerospace engineer, I really enjoy learning about engineering and especially about rockets, since I’ve been a space enthusiast for most of my life. I’m currently reading Rocket Propulsion Elements, a college textbook on rocket propulsion. I’m developing a high power rocket and propulsion systems in a project to apply what I’ve learned and to use the engineering design process on what I'm passionate about. I want to grow up and help humanity colonize Mars, the planets, and the universe. 
+                </div>
+            </div>
+            <div class="content-item">
+                <h1 class="content-item-title" id="propulsion">
+                    Altair Solid Rocket Propulsion System
+                </h1>
+                <div class="content-item-class" id="propulsion-class">
+                    <div>
+                        <h2>
+                            1
+                        </h2>
+                        <p>
+                            Planned <b>Static Fire</b>
+                        </p>
+                    </div>
+                    <div>
+                        <h2>
+                            10
+                        </h2>
+                        <p>
+                            Small-scale <b>Experiments</b> conducted 
+                        </p>
+                    </div>
+                </div>
+                <div class="content-item-text" id="propulsion-text" style="font-size: 1rem !important;">
+                    Written Engineering Design Process (pdf): In progress <br> Youtube Videos: TBD <br> Images: TBD
+                </div>
+            </div>
+            <div class="content-item">
+                <h1 class="content-item-title" id="filler">
+                    Aquila High Power Rocket
+                </h1>
+                <div class="content-item-class" id="filler-class">
+                    
+                </div>
+                <div class="content-item-text" id="filler-text">
+                    Project to be started in January if the Altair Rocket Booster is successful in its static fire.
+                </div>
+            </div>
+            <div class="content-item">
+                <h1 class="content-item-title" id="coding">
+                    Computer Programming
+                </h1>
+                <div class="content-item-class" id="coding-class">
+                    <div style="max-width: 10000px !important">
+                        <h2>
+                            5
+                        </h2>
+                        <p>
+                            Programming <b>Languages</b> self-taught: HTML, CSS, Javascript, C++, and Python
+                        </p>
+                    </div>
+                </div>
+                <div class="content-item-text" id="coding-text">
+                    My last main interest is computer programming, and I enjoy it because programming is so useful in our lives and in society. It also presents challenges unlike any others, which sparks curiosity in my mind. I built this website using programming and it was a fun process, too. Finally, it has taught me many skills such as creativity, problem-solving, self-learning, etc...
+                </div>
+            </div>
+            <div class="content-item">
+                <h1 class="content-item-title" id="web">
+                    Web Design
+                </h1>
+                <div class="content-item-class" id="web-class">
+                    <div>
+                        <h2>
+                            4000+
+                        </h2>
+                        <p>
+                            Lines of <b>Code</b>
+                        </p>
+                    </div>
+                    <div>
+                        <h2>
+                            3
+                        </h2>
+                        <p>
+                            Programming <b>Languages</b> used
+                        </p>
+                    </div>
+                    <div>
+                        <h2>
+                            300+
+                        </h2>
+                        <p>
+                            <b>Hours</b> of experience & learning
+                        </p>
+                    </div>
+                </div>
+                <div class="content-item-text" id="web-text">
+                    I started this project in September 2020, and finished in December 2020, and learned 3 programming languages along the way. I first wanted to build a simple website to showcase my work but during the coding process I discovered so much and that sparked my creativity to build more complex designs like this 3D simulation of the solar system. I will keep iterating my website as time passes because a personal website is a great form of communication. I hope you, the viewer, enjoy what I’ve created. <br>
+                    All my code is available on my GitHub repository.
+                </div>
+            </div>
+            <div class="content-item">
+                <h1 class="content-item-title" id="cfiller">
+                    
+                </h1>
+                <div class="content-item-class" id="cfiller-class">
+                    
+                </div>
+                <div class="content-item-text" id="cfiller-text">
+                    
+                </div>
+            </div>
+            <div class="content-item">
+                <h1 class="content-item-title" id="community">
+                    Community Service
+                </h1>
+                <div class="content-item-class" id="community-class">
+                    <div>
+                        <h2>
+                            54
+                        </h2>
+                        <p>
+                            Total <b>Hours</b> of service
+                        </p>
+                    </div>
+                    <div>
+                        <h2>
+                            5
+                        </h2>
+                        <p>
+                            <b>Classes</b> taught
+                        </p>
+                    </div>
+                    <div>
+                        <h2>
+                            2
+                        </h2>
+                        <p>
+                            <b>Months</b> of experience
+                        </p>
+                    </div>
+                </div>
+                <div class="content-item-text" id="community-text">
+                    I volunteered to be a youth teacher at the Princeton Learning Experience International School in Summer 2020. I taught public speaking, debate, and math online to 3rd and 4th graders. Volunteering taught me skills as a teacher, how to interact well with kids, and gave me experience in community service. I plan to continue for the rest of my school life. The point of community service is to help others in need, and that’s what I want to achieve in my life. 
+                </div>
+            </div>
+            <div class="content-item">
+                <h1 class="content-item-title" id="science">
+                    Science Olympiad
+                </h1>
+                <div class="content-item-class" id="science-class">
+                    <div>
+                        <h2>
+                            3
+                        </h2>
+                        <p>
+                            <b>Awards</b> won
+                        </p>
+                    </div>
+                    <div>
+                        <h2>
+                            3rd
+                        </h2>
+                        <p>
+                            <b>Place</b> school at NJ State Competition
+                        </p>
+                    </div>
+                    <div>
+                        <h2>
+                            2
+                        </h2>
+                        <p>
+                            <b>Years</b> of experience
+                        </p>
+                    </div>
+                </div>
+                <div class="content-item-text" id="science-text">
+                    Science Olympiad is a competition where competitors from schools compete in different testing, lab, or building events. Competition is fierce and students prepare/study for countless hours prior to competitions. I was selected onto my school’s team of 18-22 students in 7th and 8th grade and competed in 3 events in 2 competitions. This year I’m studying to compete in 3 events, Astronomy, Fossils, and Digital Structures.
+                </div>
+            </div>
+            <div class="content-item">
+                <h1 class="content-item-title" id="astronomy">
+                    Astronomy
+                </h1>
+                <div class="content-item-class" id="astronomy-class">
+                    Competition Event
+                </div>
+                <div class="content-item-text" id="astronomy-text">
+                    In this event students take a test on astronomy, and some topics included are Star Identification, classification of galaxies and stars, stellar & galactic evolution, and other hands-on tasks like spectroscopy, math calculations, or identifying and graphing light curves.
+                </div>
+            </div>
+            <div class="content-item">
+                <h1 class="content-item-title" id="paleontology">
+                    Paleontology
+                </h1>
+                <div class="content-item-class" id="paleontology-class">
+                    Competition Event
+                </div>
+                <div class="content-item-text" id="paleontology-text">
+                    In this event, students take a written test on fossils (paleontology), and also some geology. Students are asked to identify fossils from a list of around 200 species or classes of fossils and answer questions related to taxonomic classification, modes of preservation, relative and absolute dating, the geologic time scale, mineral and organic components of exoskeletons and shells, and much more. I placed 3rd in the NJ states competition during 7th grade, and plan to continue competing for 8th grade, too.
+                </div>
+            </div>
+            <div class="content-item">
+                <h1 class="content-item-title" id="engineering">
+                    Building Events (Engineering)
+                </h1>
+                <div class="content-item-class" id="engineering-class">
+                    Competition Event
+                </div>
+                <div class="content-item-text" id="engineering-text">
+                    In Science Olympiad, there are many building events related to engineering, and I participated in events called ‘Boomilever’ and ‘Mousetrap Car’. A Boomilever is a structure close to a cantilever and the competition tests the strength of your structure and the weight of the structure. Winners are determined by the highest strength to weight ratio. In Mousetrap Car, the idea is to convert the energy in a mousetrap into energy to power a car, and winners are the one that is most accurate in getting to a certain point. This year, these events are canceled and replaced with ‘Digital Structures’, which uses software to simulate a boomilever and the test. 
+                </div>
+            </div>
+            <div class="content-item">
+                <h1 class="content-item-title" id="public">
+                    Public Speaking
+                </h1>
+                <div class="content-item-class" id="public-class">
+                    <div>
+                        <h2>
+                            6
+                        </h2>
+                        <p>
+                            <b>Months</b> as public speaking club President
+                        </p>
+                    </div>
+                    <div>
+                        <h2>
+                            10
+                        </h2>
+                        <p>
+                            Toastmasters <b>Speeches</b> completed
+                        </p>
+                    </div>
+                    <div>
+                        <h2>
+                            2
+                        </h2>
+                        <p>
+                            <b>Years</b> of experience
+                        </p>
+                    </div>
+                </div>
+                <div class="content-item-text" id="public-text">
+                    One of my extracurricular activities is doing public speaking in a Youth Toastmasters International club, where I was president for 6 months. I have been in this club for 2 years, with meetings every other week. In the club, we practice giving prepared or impromptu speeches, and also evaluating our peers. It has greatly improved my public speaking and communication skills, which are really important in life and my future career.
+                </div>
+            </div>
+            <div class="content-item">
+                <h1 class="content-item-title" id="debate">
+                    Debate
+                </h1>
+                <div class="content-item-class" id="debate-class">
+                    <div>
+                        <h2>
+                            1st
+                        </h2>
+                        <p>
+                            <b>Place</b> in small tournament
+                        </p>
+                    </div>
+                    <div>
+                        <h2>
+                            2
+                        </h2>
+                        <p>
+                            <b>Years</b> of experience
+                        </p>
+                    </div>
+                    <div>
+                        <h2>
+                            4
+                        </h2>
+                        <p>
+                            Debate <b>Classes</b> taken
+                        </p>
+                    </div>
+                </div>
+                <div class="content-item-text" id="debate-text">
+                    Debate is one of my favorite extracurricular activities. I am a very competitive person who likes to win a lot, so debate suits me well. I have attended a few classes on public forum debate and won an in-class competition 5 wins to 0 losses against 9 other teams. I plan to continue to do debate in high school or college because it helps develop my persuasive skills, my public speaking skills, and my logic.
+                </div>
+            </div>
+            <div class="content-item">
+                <h1 class="content-item-title" id="math">
+                    Math Competitions
+                </h1>
+                <div class="content-item-class" id="math-class">
+                    
+                </div>
+                <div class="content-item-text" id="math-text">
+                    I do competition math as another extracurricular activity. I am on my school’s Mathcounts team, where students compete in individual or team math competitions. In 7th grade, I competed in individual, target, and the team round to help my school get 3rd place in the Central Jersey regional competition. I also participate in other competitions such as Math Olympiad, and AMC8, AMC10. 
+                </div>
+            </div>
+            <div class="content-item">
+                <h1 class="content-item-title" id="heritage">
+                    My Heritage
+                </h1>
+                <div class="content-item-text" id="heritage-text" style="margin-top: 5%;">
+                    I’m proud of my Chinese heritage, and family will always be the center of my life, just like the Sun (also the name of my family) is the center of this solar system, which represents my life. 
+                </div>
+            </div>
+            <div class="content-item">
+                <h1 class="content-item-title" id="sports">
+                    Sports
+                </h1>
+                <div class="content-item-text" id="sports-text" style="margin-top: 5%;">
+                    I play tennis as my main sport, and I also enjoy skiing in the winter. I enjoy tennis because it’s a competitive sport, and I’m a competitive person. I plan to continue to play sports and to also try out for my high school’s tennis team.
+                </div>
+            </div>
+            <div class="content-item">
+                <h1 class="content-item-title" id="closing">
+                    Closing Statement
+                </h1>
+                <div class="content-item-text" id="closing-text" style="margin-top: 5%;">
+                    I hope you enjoyed this website I created! The content I have is far from all the things I would like to share, and looking at my webpage is far from knowing me in reality. If you have any feedback or would like to report any bugs, send an email to me at brian.sun.website@gmail.com, and I would highly appreciate it. Have a great day!
+                </div>
+            </div>
+        </div>
+        <div class="moon-nav">
+            <div class="mars-moons">
+                <h2 id="mars-return">
+                    1.2
+                    <span>
+                        &nbsp;&nbsp; Return
+                    </span>
+                </h2>
+                <h2 id="phobos">
+                    1.2.1
+                    <span>
+                        &nbsp;&nbsp; Rocket Propulsion
+                    </span>
+                </h2>
+                <h2 id="deimos">
+                    1.2.2
+                    <span>
+                        &nbsp;&nbsp; High Power Rocketry
+                    </span>
+                </h2>
+            </div>
+            <div class="jupiter-moons">
+                <h2 id="jupiter-return">
+                    1.3
+                    <span>
+                        &nbsp;&nbsp; Return
+                    </span>
+                </h2>
+                <h2 id="io">
+                    1.3.1
+                    <span>
+                        &nbsp;&nbsp; Web Design
+                    </span>
+                </h2>
+                <h2 id="europa">
+                    1.3.2
+                    <span>
+                        &nbsp;&nbsp; Placeholder
+                    </span>
+                </h2>
+            </div>
+            <div class="saturn-moons">
+                <h2 id="saturn-return">
+                    2.1
+                    <span>
+                        &nbsp;&nbsp; Return
+                    </span>
+                </h2>
+                <h2 id="titan">
+                    2.1.1
+                    <span>
+                        &nbsp;&nbsp; Astronomy
+                    </span>
+                </h2>
+                <h2 id="enceladus">
+                    2.1.2
+                    <span>
+                        &nbsp;&nbsp; Engineering
+                    </span>
+                </h2>
+                <h2 id="iapetus">
+                    2.1.3
+                    <span>
+                        &nbsp;&nbsp; Paleontology
+                    </span>
+                </h2>
+            </div>
+        </div>
+    </body>
+    <script src="spacekit.js"></script>
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        $(window).on('load', function(){
+            $('.loader').fadeOut("slow");
+            $('.home-intro').css({'display': 'block'});
+            $('.home-description').css({'display': 'block'});
+        });
+
+        async function note(){
+            await sleep(10000);
+            document.querySelector('.responsiveness').style.opacity = '0';
+            await sleep(2000);
+            document.querySelector('.responsiveness').style.display = 'none';
+        }
+        note();
+
+        function navInteraction(){
+            let start = false; 
+            window.addEventListener('load', function(){
+                var ch = document.querySelector('#titleOne span').clientHeight;
+                $('#titleOne span').css({'width':ch+'px'});
+                var cv = document.querySelector('#titleTwo span').clientHeight;
+                $('#titleTwo span').css({'width':cv+'px'});
+                var cw = document.querySelector('#titleThree span').clientHeight;
+                $('#titleThree span').css({'width':cw+'px'});
+            });
+            window.addEventListener('click', function(){
+                if(document.getElementById('selectOne').checked){
+                    document.querySelector('.oneExpand').style.opacity= "1";
+                    document.querySelector('.twoExpand').style.opacity= "0";
+                    document.querySelector('.threeExpand').style.opacity= "0";
+                }else if(document.getElementById('selectTwo').checked){
+                    document.querySelector('.oneExpand').style.opacity= "0";
+                    document.querySelector('.twoExpand').style.opacity= "1";
+                    document.querySelector('.threeExpand').style.opacity= "0";
+                }else if(document.getElementById('selectThree').checked){
+                    document.querySelector('.oneExpand').style.opacity= "0";
+                    document.querySelector('.twoExpand').style.opacity= "0";
+                    document.querySelector('.threeExpand').style.opacity= "1";
+                }
+            });
+            window.addEventListener('mousemove', async function(){
+                if(start == true){
+                    document.querySelector('.nav-intro').style.opacity = 0;
+                    await sleep(1500);
+                    document.querySelector('.nav-intro').style.display = 'none';
+                }
+            });
+            document.querySelector('.nav-intro').addEventListener('mouseover', function(){
+                start = true;
+            });
+            document.getElementById('selectOne').addEventListener('mouseover', function(){
+                if(document.getElementById('selectOne').checked == false){
+                    document.querySelector('.oneExpand').style.opacity= "1";
+                }
+                start = true;
+            });
+            document.getElementById('selectOne').addEventListener('mouseout', function(){
+                if(document.getElementById('selectOne').checked == false){
+                    document.querySelector('.oneExpand').style.opacity= "0";
+                }
+            });
+            document.getElementById('selectTwo').addEventListener('mouseover', function(){
+                if(document.getElementById('selectTwo').checked == false){
+                    document.querySelector('.twoExpand').style.opacity= "1";
+                }
+                start = true;
+            });
+            document.getElementById('selectTwo').addEventListener('mouseout', function(){
+                if(document.getElementById('selectTwo').checked == false){
+                    document.querySelector('.twoExpand').style.opacity= "0";
+                }
+            });
+            document.getElementById('selectThree').addEventListener('mouseover', function(){
+                if(document.getElementById('selectThree').checked == false){
+                    document.querySelector('.threeExpand').style.opacity= "1";
+                }
+                start = true;
+            });
+            document.getElementById('selectThree').addEventListener('mouseout', function(){
+                if(document.getElementById('selectThree').checked == false){
+                    document.querySelector('.threeExpand').style.opacity= "0";
+                }
+            });
+            document.querySelector('.oneExpand').addEventListener('mouseover', function(){
+                if(document.getElementById('selectOne').checked == false){
+                    document.querySelector('.oneExpand').style.opacity= "1";
+                }
+                start = true;
+            });
+            document.querySelector('.oneExpand').addEventListener('mouseout', function(){
+                if(document.getElementById('selectOne').checked == false){
+                    document.querySelector('.oneExpand').style.opacity= "0";
+                }
+            });
+            document.querySelector('.twoExpand').addEventListener('mouseover', function(){
+                if(document.getElementById('selectTwo').checked == false){
+                    document.querySelector('.twoExpand').style.opacity= "1";
+                }
+                start = true;
+            });
+            document.querySelector('.twoExpand').addEventListener('mouseout', function(){
+                if(document.getElementById('selectTwo').checked == false){
+                    document.querySelector('.twoExpand').style.opacity= "0";
+                }
+            });
+            document.querySelector('.threeExpand').addEventListener('mouseover', function(){
+                if(document.getElementById('selectThree').checked == false){
+                    document.querySelector('.threeExpand').style.opacity= "1";
+                }
+                start = true;
+            });
+            document.querySelector('.threeExpand').addEventListener('mouseout', function(){
+                if(document.getElementById('selectThree').checked == false){
+                    document.querySelector('.threeExpand').style.opacity= "0";
+                }
+            });
+        }
+        navInteraction();
+
+        function navExpanding(){
+            let classOne = document.querySelectorAll('.oneExpand h2');
+            let classOneSpan = document.querySelectorAll('.oneExpand h2 span');
+            classOne.forEach(element => {
+                element.addEventListener('mouseover', function(){
+                    element.childNodes[1].style.opacity = '1';
+                });
+                element.addEventListener('mouseout', function(){
+                    element.childNodes[1].style.opacity = '0';
+                });
+            });
+            let classTwo = document.querySelectorAll('.twoExpand h2');
+            let classTwoSpan = document.querySelectorAll('.twoExpand h2 span');
+            classTwo.forEach(element => {
+                element.addEventListener('mouseover', function(){
+                    element.childNodes[1].style.opacity = '1';
+                });
+                element.addEventListener('mouseout', function(){
+                    element.childNodes[1].style.opacity = '0';
+                });
+            });
+            let classThree = document.querySelectorAll('.threeExpand h2');
+            let classThreeSpan = document.querySelectorAll('.threeExpand h2 span');
+            classThree.forEach(element => {
+                element.addEventListener('mouseover', function(){
+                    element.childNodes[1].style.opacity = '1';
+                });
+                element.addEventListener('mouseout', function(){
+                    element.childNodes[1].style.opacity = '0';
+                });
+            });
+            let subClassOne = document.querySelectorAll('.mars-moons h2');
+            subClassOne.forEach(element => {
+                element.addEventListener('mouseover', function(){
+                    element.childNodes[1].style.opacity = '1';
+                });
+                element.addEventListener('mouseout', function(){
+                    element.childNodes[1].style.opacity = '0';
+                });
+            });
+            let subClassTwo = document.querySelectorAll('.jupiter-moons h2');
+            subClassTwo.forEach(element => {
+                element.addEventListener('mouseover', function(){
+                    element.childNodes[1].style.opacity = '1';
+                });
+                element.addEventListener('mouseout', function(){
+                    element.childNodes[1].style.opacity = '0';
+                });
+            });
+            let subClassThree = document.querySelectorAll('.saturn-moons h2');
+            subClassThree.forEach(element => {
+                element.addEventListener('mouseover', function(){
+                    element.childNodes[1].style.opacity = '1';
+                });
+                element.addEventListener('mouseout', function(){
+                    element.childNodes[1].style.opacity = '0';
+                });
+            });
+            let subClassFour = document.querySelectorAll('.neptune-moons h2');
+            subClassFour.forEach(element => {
+                element.addEventListener('mouseover', function(){
+                    element.childNodes[1].style.opacity = '1';
+                });
+                element.addEventListener('mouseout', function(){
+                    element.childNodes[1].style.opacity = '0';
+                });
+            });
+        }
+        navExpanding();
+
+        const viz = new Spacekit.Simulation(document.getElementById('space'), {
+            jdPerSecond: 0.02,
+            particleTextureUrl: '{{assets}}/sprites/fuzzyparticle.png',
+            unitsPerAu: 87.0,
+            camera: {
+                initialPosition: [
+                    225,
+                    -245,
+                    105,
+                ],
+                enableDrift: true,
+            },
+            debug: {
+                showGrid: false,
+                showAxes: false,
+                showStats: true,
+            }
+        });
+        viz.createSkybox(Spacekit.SkyboxPresets.ESO_GIGAGALAXY);
+        const SUN_POS = [0, 0, 0.01];
+        viz.createLight(SUN_POS);
+        viz.createObject(
+            'sun',
+            Object.assign(Spacekit.SpaceObjectPresets.SUN, {
+                position: SUN_POS,
+            }),
+        );
+
+        function addPlanets(){
+            const moonObjs = [];
+
+            const mercuryTexture = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Mercury.jpg';
+            const venusTexture = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Venus.jpg';
+            const earthTexture = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Earth.jpg';
+            const marsTexture = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Mars.jpg';
+            const jupiterTexture = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Jupiter.jpg';
+            const saturnTexture = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Saturn.jpg';
+            const uranusTexture = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Uranus.jpg';
+            const neptuneTexture = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Neptune.jpg';
+            const plutoTexture = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Pluto.jpg';
+            const saturnRingsTexture = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Saturn_Rings.png';
+
+            const moonTexture = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Moon.jpg';
+            const phobosObj = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Phobos.obj';
+            const deimosObj = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Deimos.obj';
+            const ioTexture = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Io.jpg';
+            const europaTexture = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Europa.jpg';
+            const enceladusTexture = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Enceladus.jpg';
+            const titanTexture = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Titan.jpg'; 
+            const iapetusTexture = 'https://raw.githubusercontent.com/AstroBrian/Brian-Sun-2025/main/Planet%20Textures/Iapetus.jpg';
+            
+
+            const mercury = viz.createSphere('mercury', {
+                textureUrl: mercuryTexture,
+                radius: 3471.2 / 149598000,
+                ephem: Spacekit.EphemPresets.MERCURY,
+                levelsOfDetail: [
+                    { radii: 0, segments: 64 },
+                    { radii: 30, segments: 16 },
+                    { radii: 60, segments: 8 },
+                ],
+                atmosphere: {
+                    enable: false,
+                },
+                occludeLabels: true,
+                theme: {
+                    orbitColor: 0x4f4e52,
+                },
+                rotation: {
+                    enable: true,
+                    speed: 0.9,
+                },
+            });
+
+            const venus = viz.createSphere('venus', {
+                textureUrl: venusTexture,
+                radius: 6051.8 / 149598000, 
+                ephem: Spacekit.EphemPresets.VENUS,
+                levelsOfDetail: [
+                    { radii: 0, segments: 64 },
+                    { radii: 30, segments: 16 },
+                    { radii: 60, segments: 8 },
+                ],
+                atmosphere: {
+                    enable: true,
+                },
+                occludeLabels: true,
+                theme: {
+                    orbitColor: 0xffd978,
+                },
+                rotation: {
+                    enable: true,
+                    speed: 0.05,
+                },
+            });
+
+            const earth = viz.createSphere('earth', {
+                textureUrl: earthTexture,
+                radius: 8371 / 149598000, 
+                ephem: Spacekit.EphemPresets.EARTH,
+                levelsOfDetail: [
+                    { radii: 0, segments: 64 },
+                    { radii: 30, segments: 16 },
+                    { radii: 60, segments: 8 },
+                ],
+                atmosphere: {
+                    enable: true,
+                },
+                occludeLabels: true,
+                theme: {
+                    orbitColor: 0x3892ff,
+                },
+                rotation: {
+                    enable: true,
+                    speed: 0.3,
+                },
+            });
+            
+            const moon = viz.createSphere('moon', {
+                textureUrl: moonTexture,
+                radius: 3718.1 / 149598000,
+                ephem: Spacekit.EphemPresets.MOON,
+                levelsOfDetail: [
+                    { radii: 0, segments: 64 },
+                    { radii: 30, segments: 16 },
+                    { radii: 60, segments: 8 },
+                ],
+                atmosphere: {
+                    enable: false,
+                },
+                occludeLabels: true,
+                theme: {
+                    orbitColor: 0xffffff,
+                },
+                rotation: {
+                    enable: true,
+                    speed: 0.1,
+                },
+            });
+            moon.orbitAround(earth);
+
+            const mars = viz.createSphere('mars', {
+                textureUrl: marsTexture,
+                radius: 3389.5 / 149598000, 
+                ephem: Spacekit.EphemPresets.MARS,
+                levelsOfDetail: [
+                    { radii: 0, segments: 64 },
+                    { radii: 30, segments: 16 },
+                    { radii: 60, segments: 8 },
+                ],
+                atmosphere: {
+                    enable: true,
+                },
+                occludeLabels: true,
+                theme: {
+                    orbitColor: 0xc91e00,
+                },
+                rotation: {
+                    enable: true,
+                    speed: 0.3,
+                },
+            });
+            const phobos = viz.createShape('phobos', {
+                shape: {
+                    shapeUrl: phobosObj,
+                    radius: 1100.267 / 149598000, 
+                },
+                ephem: new Spacekit.Ephem({
+                    epoch: 2433282.5,
+                    period: 0.3,
+                    a: 9376 / 149598000,
+                    e: 0.0151,
+                    i: 1.075,
+                    om: 311,
+                    w: 150.057,
+                    ma: 7, 
+                }, 'deg'),
+                rotation: {
+                    enable: true,
+                    speed: 0.1,
+                },
+                labelText: 'Phobos',
+            });
+            phobos.orbitAround(mars);
+            const deimos = viz.createShape('deimos', {
+                shape: {
+                    shapeUrl: deimosObj,
+                    radius: 620 / 149598000, 
+                },
+                ephem: new Spacekit.Ephem({
+                    epoch: 2433282.5,
+                    period: 1.25,
+                    a: 23478 / 149598000,
+                    e: 0.0002,
+                    i: 1.788,
+                    om: 90,
+                    w: 260.769,
+                    ma: 106, 
+                }, 'deg'),
+                rotation: {
+                    enable: true,
+                    speed: 0.1,
+                },
+                labelText: 'Deimos',
+            });
+            deimos.orbitAround(mars);
+            viz._subscribedObjects.phobos.setLabelVisibility(false);
+            viz._subscribedObjects.deimos.setLabelVisibility(false);
+
+            const jupiter = viz.createSphere('jupiter', {
+                textureUrl: jupiterTexture,
+                radius: 69911 / 149598000,
+                ephem: Spacekit.EphemPresets.JUPITER,
+                levelsOfDetail: [
+                    { radii: 0, segments: 64 },
+                    { radii: 30, segments: 16 },
+                    { radii: 60, segments: 8 },
+                ],
+                atmosphere: {
+                    enable: true,
+                },
+                occludeLabels: true,
+                theme: {
+                    orbitColor: 0xffda1f,
+                },
+                rotation: {
+                    enable: true,
+                    speed: 0.7,
+                },
+            });
+            const io = viz.createSphere('io', {
+                textureUrl: ioTexture,
+                radius: 1821.6*2 / 149598000, 
+                ephem: new Spacekit.Ephem({
+                    epoch: 2450464.5,
+                    period: 1.75,
+                    a: 421800 / 149598000,
+                    e: 0.0041,
+                    i: 0.036,
+                    om: 287,
+                    w: 84.129,
+                    ma: 7, 
+                }, 'deg'),
+                levelsOfDetail: [
+                    { radii: 0, segments: 64 },
+                    { radii: 30, segments: 16 },
+                    { radii: 60, segments: 8 },
+                ],
+                rotation: {
+                    enable: true,
+                    speed: 0.2,
+                },
+                labelText: 'Io',
+            });
+            io.orbitAround(jupiter);
+            const europa = viz.createSphere('europa', {
+                textureUrl: europaTexture,
+                radius: 1560.8*2 / 149598000, 
+                ephem: new Spacekit.Ephem({
+                    epoch: 2450464.5,
+                    period: 3.54,
+                    a: 671100 / 149598000,
+                    e: 0.0094,
+                    i: 0.466,
+                    om: 319,
+                    w: 88.97,
+                    ma: 7, 
+                }, 'deg'),
+                levelsOfDetail: [
+                    { radii: 0, segments: 64 },
+                    { radii: 30, segments: 16 },
+                    { radii: 60, segments: 8 },
+                ],
+                rotation: {
+                    enable: true,
+                    speed: 0.2,
+                },
+                labelText: 'Europa',
+            });
+            europa.orbitAround(jupiter);
+            viz._subscribedObjects.io.setLabelVisibility(false);
+            viz._subscribedObjects.europa.setLabelVisibility(false);
+            const jupiterMoonObjs = [];
+            let jupiterSatellites = [];
+            viz.loadNaturalSatellites().then(loader => {
+                jupiterSatellites = loader.getSatellitesForPlanet('jupiter');
+                jupiterSatellites.forEach(moon => {
+                    if(moon.name == 'Ganymede' || moon.name == 'Callisto'){
+                        const obj = viz.createObject(moon.name, {
+                            labelText: moon.name,
+                            ephem: moon.ephem,
+                            particleSize: 0.1,
+                        });
+                        obj.setLabelVisibility(false); 
+                        obj.orbitAround(jupiter);
+                        jupiterMoonObjs.push(obj);
+                        moonObjs.push(obj);
+                    }
+                });
+            });
+
+            const saturn = viz.createSphere('saturn', {
+                textureUrl: saturnTexture,
+                radius: 58232.503 / 149598000, 
+                ephem: Spacekit.EphemPresets.SATURN,
+                levelsOfDetail: [
+                    { radii: 0, segments: 64 },
+                    { radii: 30, segments: 16 },
+                    { radii: 60, segments: 8 },
+                ],
+                atmosphere: {
+                    enable: true,
+                },
+                occludeLabels: true,
+                theme: {
+                    orbitColor: 0xca85ff,
+                },
+                rotation: {
+                    enable: true,
+                    speed: 0.2,
+                },
+            });
+            saturn.addRings(74270.580913, 140478.924731, saturnRingsTexture);
+            const saturnMoonObjs = [];
+            let saturnSatellites = [];
+            viz.loadNaturalSatellites().then(loader => {
+                saturnSatellites = loader.getSatellitesForPlanet('saturn');
+                saturnSatellites.forEach(moon => {
+                    if(moon.name == 'Enceladus' || moon.name == 'Rhea' || moon.name == 'Mimas' || moon.name == 'Tethys' || moon.name == 'Dione' || moon.name == 'Iapteus'){
+                        const obj = viz.createObject(moon.name, {
+                            labelText: moon.name,
+                            ephem: moon.ephem,
+                            particleSize: 0.1,
+                            //hideOrbit: true,
+                        });
+                        obj.setLabelVisibility(false); 
+                        obj.orbitAround(saturn);
+                        saturnMoonObjs.push(obj);
+                        moonObjs.push(obj);
+                    }
+                });
+            });
+            const titan = viz.createSphere('titan', {
+                textureUrl: titanTexture,
+                radius: 2574.7*2 / 149598000, 
+                ephem: new Spacekit.Ephem({
+                    epoch: 2451545,
+                    period: 16,
+                    a: 1221865 / 149598000,
+                    e: 0.0288,
+                    i: 0.306,
+                    om: 256,
+                    w: 180.532,
+                    ma: 7, 
+                }, 'deg'),
+                levelsOfDetail: [
+                    { radii: 0, segments: 64 },
+                    { radii: 30, segments: 16 },
+                    { radii: 60, segments: 8 },
+                ],
+                atmosphere: {
+                    enable: true,
+                    color: 0x9698ff,
+                    innerSizeRatio: 0.05,
+                    outerSizeRatio: 0.25
+                },
+                rotation: {
+                    enable: true,
+                    speed: 0.3,
+                },
+                labelText: 'Titan',
+            });
+            titan.orbitAround(saturn);
+            const enceladus = viz.createSphere('enceladus', {
+                textureUrl: enceladusTexture,
+                radius: 3000 / 149598000, 
+                ephem: new Spacekit.Ephem({
+                    epoch: 2451545,
+                    period: 1.3,
+                    a: 238042 / 149598000,
+                    e: 0,
+                    i: 0.003,
+                    om: 256,
+                    w: 0.076,
+                    ma: 7, 
+                }, 'deg'),
+                levelsOfDetail: [
+                    { radii: 0, segments: 64 },
+                    { radii: 30, segments: 16 },
+                    { radii: 60, segments: 8 },
+                ],
+                rotation: {
+                    enable: true,
+                    speed: 0.3,
+                },
+                labelText: 'Enceladus',
+            });
+            enceladus.orbitAround(saturn);
+            const iapetus = viz.createSphere('iapetus', {
+                textureUrl: iapetusTexture,
+                radius: 4000 / 149598000, 
+                ephem: new Spacekit.Ephem({
+                    epoch: 2451545,
+                    period: 79,
+                    a: 3560854 / 149598000,
+                    e: 0.0293,
+                    i: 8.298,
+                    om: 256,
+                    w: 271.606,
+                    ma: 7, 
+                }, 'deg'),
+                levelsOfDetail: [
+                    { radii: 0, segments: 64 },
+                    { radii: 30, segments: 16 },
+                    { radii: 60, segments: 8 },
+                ],
+                rotation: {
+                    enable: true,
+                    speed: 0.3,
+                },
+                labelText: 'Iapetus',
+            });
+            iapetus.orbitAround(saturn);
+            viz._subscribedObjects.titan.setLabelVisibility(false);
+            viz._subscribedObjects.enceladus.setLabelVisibility(false);
+            viz._subscribedObjects.iapetus.setLabelVisibility(false);
+
+            const uranus = viz.createSphere('uranus', {
+                textureUrl: uranusTexture,
+                radius: 25362 / 149598000,
+                ephem: Spacekit.EphemPresets.URANUS,
+                levelsOfDetail: [
+                    { radii: 0, segments: 64 },
+                    { radii: 30, segments: 16 },
+                    { radii: 60, segments: 8 },
+                ],
+                atmosphere: {
+                    enable: true,
+                },
+                occludeLabels: true,
+                theme: {
+                    orbitColor: 0x00bbff,
+                },
+                rotation: {
+                    enable: true,
+                    speed: 0.3,
+                },
+            });
+            let uranusSatellites = [];
+            const uranusMoonObjs = [];
+            viz.loadNaturalSatellites().then(loader => {
+                uranusSatellites = loader.getSatellitesForPlanet('uranus');
+                uranusSatellites.forEach(moon => {
+                    if(moon.name == 'Ariel' || moon.name == 'Miranda' || moon.name == 'Titania' || moon.name == 'Umbriel' || moon.name == 'Oberon'){
+                        const obj = viz.createObject(moon.name, {
+                            labelText: moon.name,
+                            ephem: moon.ephem,
+                            particleSize: 0.1,
+                            //hideOrbit: true,
+                        });
+                        obj.setLabelVisibility(false); 
+                        obj.orbitAround(uranus);
+                        uranusMoonObjs.push(obj);
+                        moonObjs.push(obj);
+                    }
+                });
+            });
+
+            const neptune = viz.createSphere('neptune', {
+                textureUrl: neptuneTexture,
+                radius: 24622 / 149598000,
+                ephem: Spacekit.EphemPresets.NEPTUNE,
+                levelsOfDetail: [
+                    { radii: 0, segments: 64 },
+                    { radii: 30, segments: 16 },
+                    { radii: 60, segments: 8 },
+                ],
+                atmosphere: {
+                    enable: true,
+                },
+                occludeLabels: true,
+                theme: {
+                    orbitColor: 0x1e00ff,
+                },
+                rotation: {
+                    enable: true,
+                    speed: 0.5,
+                },
+            });
+            let neptuneSatellites = [];
+            const neptuneMoonObjs = [];
+            viz.loadNaturalSatellites().then(loader => {
+                neptuneSatellites = loader.getSatellitesForPlanet('neptune');
+                neptuneSatellites.forEach(moon => {
+                    if(moon.name == 'Triton' || moon.name == 'Proteus' || moon.name == 'Larissa' || moon.name == 'Nereid'){
+                        const obj = viz.createObject(moon.name, {
+                            labelText: moon.name,
+                            ephem: moon.ephem,
+                            particleSize: 0.1,
+                            //hideOrbit: true,
+                        });
+                        obj.setLabelVisibility(false); 
+                        obj.orbitAround(neptune);
+                        neptuneMoonObjs.push(obj);
+                        moonObjs.push(obj);
+                    }
+                });
+            });
+            /*const triton = viz.createSphere('triton', {
+                textureUrl: 'https://raw.githubusercontent.com/AstroBrian/BrianSun-25/main/Triton.jpg',
+                radius: 1353.4*3 / 149598000, 
+                ephem: new Spacekit.Ephem({
+                    epoch: 2451544.5,
+                    period: 5.875,
+                    a: 354759 / 149598000,
+                    e: 0,
+                    i: 156.865,
+                    om: 256,
+                    w: 66.142,
+                    ma: 7, 
+                }, 'deg'),
+                levelsOfDetail: [
+                    { radii: 0, segments: 64 },
+                    { radii: 30, segments: 16 },
+                    { radii: 60, segments: 8 },
+                ],
+                rotation: {
+                    enable: true,
+                    speed: 0.05,
+                },
+                labelText: 'Triton',
+            });
+            triton.orbitAround(neptune);
+            viz._subscribedObjects.triton.setLabelVisibility(false);*/
+
+            const pluto = viz.createSphere('pluto', {
+                textureUrl: plutoTexture,
+                radius: 5000 / 149598000, 
+                ephem: Spacekit.EphemPresets.PLUTO,
+                levelsOfDetail: [
+                    { radii: 0, segments: 64 },
+                    { radii: 30, segments: 16 },
+                    { radii: 60, segments: 8},
+                ],
+                atmosphere: {
+                    enable: false,
+                },
+                occludeLabels: true,
+                theme: {
+                    orbitColor: 0xA0522D,
+                },
+                rotation: {
+                    enable: true,
+                    speed: 0.2,
+                },
+            });
+        }
+        addPlanets();
+
+        function addGUI(){
+            const guiState = {
+                Speed: 0.02,
+            };
+            const gui = new dat.GUI({ autoPlace: false });
+            var customContainer = $('.moveGUI').append($(gui.domElement));
+            gui.add(guiState, 'Speed', 0, 1).onChange(val => {
+                viz.setJdPerSecond(val);
+            });
+        }
+        addGUI();
+
+        window.THREE = Spacekit.THREE;
+
+        function sceneChange(){
+            let scene = 0; 
+            document.querySelector('#selectHome').addEventListener('click', function(){
+                if(scene != 0){
+                    viz.getViewer().resetScene();
+                }
+                scene = 0;
+            });
+            document.querySelector('#selectOne').addEventListener('click', function(){
+                if(scene != 1){
+                    viz.getViewer().followTarget([0,0,350], [0,0,50]);
+                }
+                scene = 1;
+            });
+            document.querySelector('#one-one').addEventListener('click', function(){
+                if(scene != 11){
+                    viz.getViewer().followObject(viz._subscribedObjects.venus, [0.0095, -0.0075, 0.0015]);
+                }
+                scene = 11;
+                document.querySelector('#selectThree').removeAttribute("checked");
+                document.querySelector('#selectTwo').removeAttribute("checked");
+                document.querySelector('#selectOne').setAttribute('checked', true);
+            });
+            document.querySelector('#one-two').addEventListener('click', function(){
+                if(scene != 12){
+                    viz.getViewer().followObject(viz._subscribedObjects.mars, [0.0025, -0.0065, 0.0015]);
+                }
+                scene = 12;
+                document.querySelector('#selectThree').removeAttribute("checked");
+                document.querySelector('#selectTwo').removeAttribute("checked");
+                document.querySelector('#selectOne').setAttribute('checked', true);
+            });
+            document.querySelector('#mars-return').addEventListener('click', function(){
+                if(scene != 12){
+                    viz.getViewer().followObject(viz._subscribedObjects.mars, [0.0025, -0.0065, 0.0015]);
+                }
+                scene = 12;
+                document.querySelector('#selectThree').removeAttribute("checked");
+                document.querySelector('#selectTwo').removeAttribute("checked");
+                document.querySelector('#selectOne').setAttribute('checked', true);
+            });
+            document.querySelector('#phobos').addEventListener('click', function(){
+                if(scene != 121){
+                    viz.getViewer().followObject(viz._subscribedObjects.phobos, [0.002, -0.005, 0.0015]);
+                }
+                scene = 121;
+            });
+            document.querySelector('#deimos').addEventListener('click', function(){
+                if(scene != 122){
+                    viz.getViewer().followObject(viz._subscribedObjects.deimos, [0.002, -0.005, 0.0015]);
+                }
+                scene = 122;
+            });
+            document.querySelector('#one-three').addEventListener('click', function(){
+                if(scene != 13){
+                    viz.getViewer().followObject(viz._subscribedObjects.jupiter, [-0.13, 0.08, 0.06]);
+                }
+                scene = 13;
+                document.querySelector('#selectThree').removeAttribute("checked");
+                document.querySelector('#selectTwo').removeAttribute("checked");
+                document.querySelector('#selectOne').setAttribute('checked', true);
+            });
+            document.querySelector('#jupiter-return').addEventListener('click', function(){
+                if(scene != 13){
+                    viz.getViewer().followObject(viz._subscribedObjects.jupiter, [-0.13, 0.08, 0.06]);
+                }
+                scene = 13;
+                document.querySelector('#selectThree').removeAttribute("checked");
+                document.querySelector('#selectTwo').removeAttribute("checked");
+                document.querySelector('#selectOne').setAttribute('checked', true);
+            });
+            document.querySelector('#io').addEventListener('click', function(){
+                if(scene != 131){
+                    viz.getViewer().followObject(viz._subscribedObjects.io, [0.009, 0.015, 0.003]);
+                }
+                scene = 131;
+            });
+            document.querySelector('#europa').addEventListener('click', function(){
+                if(scene != 132){
+                    viz.getViewer().followObject(viz._subscribedObjects.europa, [0.009, 0.015, 0.003]);
+                }
+                scene = 132;
+            });
+
+            document.querySelector('#selectTwo').addEventListener('click', function(){
+                if(scene != 2){
+                    viz.getViewer().followTarget([700,-1000,500], [0,0,200]);
+                }
+                scene = 2;
+            });
+            document.querySelector('#two-one').addEventListener('click', function(){
+                if(scene != 21){
+                    viz.getViewer().followObject(viz._subscribedObjects.saturn, [-0.13, 0, 0.03]);
+                }
+                scene = 21;
+                document.querySelector('#selectThree').removeAttribute("checked");
+                document.querySelector('#selectOne').removeAttribute("checked");
+                document.querySelector('#selectTwo').setAttribute('checked', true);
+            });
+            document.querySelector('#saturn-return').addEventListener('click', function(){
+                if(scene != 21){
+                    viz.getViewer().followObject(viz._subscribedObjects.saturn, [-0.13, 0, 0.03]);
+                }
+                scene = 21;
+                document.querySelector('#selectThree').removeAttribute("checked");
+                document.querySelector('#selectOne').removeAttribute("checked");
+                document.querySelector('#selectTwo').setAttribute('checked', true);
+            });
+            document.querySelector('#titan').addEventListener('click', function(){
+                if(scene != 211){
+                    viz.getViewer().followObject(viz._subscribedObjects.titan, [0.015, 0, 0.003]);
+                }
+                scene = 211;
+            });
+            document.querySelector('#enceladus').addEventListener('click', function(){
+                if(scene != 212){
+                    viz.getViewer().followObject(viz._subscribedObjects.enceladus, [0.01, 0.012, 0.002]);
+                }
+                scene = 212;
+            });
+            document.querySelector('#iapetus').addEventListener('click', function(){
+                if(scene != 213){
+                    viz.getViewer().followObject(viz._subscribedObjects.iapetus, [0.01, 0.012, 0.002]);
+                }
+                scene = 213;
+            });
+            document.querySelector('#two-two').addEventListener('click', function(){
+                if(scene != 22){
+                    viz.getViewer().followObject(viz._subscribedObjects.earth, [-0.0075, -0.015, 0.006]);
+                }
+                scene = 22;
+                document.querySelector('#selectThree').removeAttribute("checked");
+                document.querySelector('#selectOne').removeAttribute("checked");
+                document.querySelector('#selectTwo').setAttribute('checked', true);
+            });
+            document.querySelector('#two-three').addEventListener('click', function(){
+                if(scene != 23){
+                    viz.getViewer().followObject(viz._subscribedObjects.moon, [-0.003, -0.007, 0.002]);
+                }
+                scene = 23;
+                document.querySelector('#selectThree').removeAttribute("checked");
+                document.querySelector('#selectOne').removeAttribute("checked");
+                document.querySelector('#selectTwo').setAttribute('checked', true);
+            });
+            document.querySelector('#two-four').addEventListener('click', function(){
+                if(scene != 24){
+                    viz.getViewer().followObject(viz._subscribedObjects.uranus, [-0.01, -0.05, 0.015]);
+                }
+                scene = 24;
+                document.querySelector('#selectThree').removeAttribute("checked");
+                document.querySelector('#selectOne').removeAttribute("checked");
+                document.querySelector('#selectTwo').setAttribute('checked', true);
+            });
+            document.querySelector('#two-five').addEventListener('click', function(){
+                if(scene != 25){
+                    viz.getViewer().followObject(viz._subscribedObjects.neptune, [-0.01, -0.05, 0.015]);
+                }
+                scene = 25;
+                document.querySelector('#selectThree').removeAttribute("checked");
+                document.querySelector('#selectOne').removeAttribute("checked");
+                document.querySelector('#selectTwo').setAttribute('checked', true);
+            });
+
+            document.querySelector('#selectThree').addEventListener('click', function(){
+                if(scene != 3){
+                    viz.getViewer().followTarget([-5500,0,-350], [0,0,-200]);
+                }
+                scene = 3;
+            });
+            document.querySelector('#three-one').addEventListener('click', function(){
+                if(scene != 31){
+                    viz.getViewer().followObject(viz._subscribedObjects.sun, [15, 15, 5]);
+                }
+                scene = 31;
+                document.querySelector('#selectTwo').removeAttribute("checked");
+                document.querySelector('#selectOne').removeAttribute("checked");
+                document.querySelector('#selectThree').setAttribute('checked', true);
+            });
+            document.querySelector('#three-two').addEventListener('click', function(){
+                if(scene != 32){
+                    viz.getViewer().followObject(viz._subscribedObjects.mercury, [-0.005, 0.015, 0.003]);
+                }
+                scene = 32;
+                document.querySelector('#selectTwo').removeAttribute("checked");
+                document.querySelector('#selectOne').removeAttribute("checked");
+                document.querySelector('#selectThree').setAttribute('checked', true);
+            });
+            document.querySelector('#three-three').addEventListener('click', function(){
+                if(scene != 33){
+                    viz.getViewer().followObject(viz._subscribedObjects.pluto, [-0.0005, -0.009, -0.001]);
+                }
+                scene = 33;
+                document.querySelector('#selectTwo').removeAttribute("checked");
+                document.querySelector('#selectOne').removeAttribute("checked");
+                document.querySelector('#selectThree').setAttribute('checked', true);
+            });
+
+            window.addEventListener('click', async function(){
+                if(scene != 0){
+                    document.querySelector('.home-intro').style.display = 'none';
+                    document.querySelector('.home-description').style.display = 'none';
+                    document.querySelector('.nav-intro').style.display = 'none';
+                    viz.setCameraDrift(false);
+                }else{
+                    document.querySelector('.home-intro').style.display = 'block';
+                    document.querySelector('.home-description').style.display = 'block';
+                }
+                if(scene == 1){
+                    document.querySelector('.main-interests-title').style.display = 'block';
+                    document.querySelector('.main-interests-subtitle').style.display = 'block';
+                }else{
+                    document.querySelector('.main-interests-title').style.display = 'none';
+                    document.querySelector('.main-interests-subtitle').style.display = 'none';
+                }
+                if(scene == 2){
+                    document.querySelector('.extracurriculars-title').style.display = 'block';
+                    document.querySelector('.extracurriculars-subtitle').style.display = 'block';
+                }else{
+                    document.querySelector('.extracurriculars-title').style.display = 'none';
+                    document.querySelector('.extracurriculars-subtitle').style.display = 'none';
+                }
+                if(scene == 3){
+                    document.querySelector('.other-title').style.display = 'block';
+                    document.querySelector('.other-subtitle').style.display = 'block';
+                }else{
+                    document.querySelector('.other-title').style.display = 'none';
+                    document.querySelector('.other-subtitle').style.display = 'none';
+                }
+                if(scene != 0 && scene != 1 && scene != 2 && scene != 3){
+                    document.querySelector('.portfolio-content').style.display = 'block';
+                    document.querySelector('.portfolio-content').style.zIndex = '0';
+                    document.querySelector('.portfolio-content').style.opacity = '1';
+                    document.querySelector('.blur').style.display = 'block';
+                    document.querySelector('.blur').style.zIndex = '0';
+                    document.querySelector('.blur').style.opacity = '1';
+                }else{
+                    document.querySelector('.portfolio-content').style.display = 'none';
+                    document.querySelector('.portfolio-content').style.zIndex = '-2';
+                    document.querySelector('.portfolio-content').style.opacity = '0';
+                    document.querySelector('.blur').style.display = 'none';
+                    document.querySelector('.blur').style.zIndex = '-2';
+                    document.querySelector('.blur').style.opacity = '0';
+                }
+                if(scene == 11){
+                    await sleep(300);
+                    document.querySelector('#violin').style.transform = 'translateX(0)';
+                    document.querySelector('#violin').style.opacity = '1';
+                    document.querySelector('#violin').style.transform = 'translateX(25%)';
+                    document.querySelector('#violin-class').style.transform = 'translateX(25%)';
+                    document.querySelector('#violin-class').style.opacity = '1';
+                    document.querySelector('#violin-text').style.opacity = '1';
+                    document.querySelector('#violin-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#violin').style.transform = 'translateX(4vw)';
+                    document.querySelector('#violin').style.opacity = '0';
+                    document.querySelector('#violin').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#violin-class').style.transform = 'translateX(calc(25% + 3vw))';
+                    document.querySelector('#violin-class').style.opacity = '0';
+                    document.querySelector('#violin-text').style.opacity = '0';
+                    document.querySelector('#violin-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+                if(scene == 12){
+                    await sleep(300);
+                    document.querySelector('#aerospace').style.transform = 'translateX(0%)';
+                    document.querySelector('#aerospace').style.opacity = '1';
+                    document.querySelector('#aerospace').style.transform = 'translateX(25%)';
+                    document.querySelector('#aerospace-class').style.transform = 'translateX(25%)';
+                    document.querySelector('#aerospace-class').style.opacity = '1';
+                    document.querySelector('#aerospace-text').style.opacity = '1';
+                    document.querySelector('#aerospace-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#aerospace').style.transform = 'translateX(4vw)';
+                    document.querySelector('#aerospace').style.opacity = '0';
+                    document.querySelector('#aerospace').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#aerospace-class').style.transform = 'translateX(calc(25% + 3vw))';
+                    document.querySelector('#aerospace-class').style.opacity = '0';
+                    document.querySelector('#aerospace-text').style.opacity = '0';
+                    document.querySelector('#aerospace-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+                if(scene == 12 || scene == 121 || scene == 122){
+                    viz._subscribedObjects.phobos.setLabelVisibility(true);
+                    viz._subscribedObjects.deimos.setLabelVisibility(true);
+                    document.querySelector('.mars-moons').style.opacity = '1';
+                    document.querySelector('.mars-moons').style.display = 'block';
+                    document.querySelector('.mars-moons').style.zIndex = '0';
+                }else{
+                    viz._subscribedObjects.phobos.setLabelVisibility(false);
+                    viz._subscribedObjects.deimos.setLabelVisibility(false);
+                    document.querySelector('.mars-moons').style.opacity = '0';
+                    document.querySelector('.mars-moons').style.display = 'none';
+                    document.querySelector('.mars-moons').style.zIndex = '-2';
+                }
+                if(scene == 121){
+                    await sleep(300);
+                    document.querySelector('#propulsion').style.transform = 'translateX(0%)';
+                    document.querySelector('#propulsion').style.opacity = '1';
+                    document.querySelector('#propulsion').style.transform = 'translateX(25%)';
+                    document.querySelector('#propulsion-class').style.transform = 'translateX(25%)';
+                    document.querySelector('#propulsion-class').style.opacity = '1';
+                    document.querySelector('#propulsion-text').style.opacity = '1';
+                    document.querySelector('#propulsion-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#propulsion').style.transform = 'translateX(4vw)';
+                    document.querySelector('#propulsion').style.opacity = '0';
+                    document.querySelector('#propulsion').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#propulsion-class').style.transform = 'translateX(calc(25% + 3vw))';
+                    document.querySelector('#propulsion-class').style.opacity = '0';
+                    document.querySelector('#propulsion-text').style.opacity = '0';
+                    document.querySelector('#propulsion-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+                if(scene == 122){
+                    await sleep(300);
+                    document.querySelector('#filler').style.transform = 'translateX(0%)';
+                    document.querySelector('#filler').style.opacity = '1';
+                    document.querySelector('#filler').style.transform = 'translateX(25%)';
+                    document.querySelector('#filler-class').style.transform = 'translateX(25%)';
+                    document.querySelector('#filler-class').style.opacity = '1';
+                    document.querySelector('#filler-text').style.opacity = '1';
+                    document.querySelector('#filler-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#filler').style.transform = 'translateX(4vw)';
+                    document.querySelector('#filler').style.opacity = '0';
+                    document.querySelector('#filler').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#filler-class').style.transform = 'translateX(calc(25% + 3vw))';
+                    document.querySelector('#filler-class').style.opacity = '0';
+                    document.querySelector('#filler-text').style.opacity = '0';
+                    document.querySelector('#filler-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+                if(scene == 13){
+                    await sleep(300);
+                    document.querySelector('#coding').style.transform = 'translateX(0%)';
+                    document.querySelector('#coding').style.opacity = '1';
+                    document.querySelector('#coding').style.transform = 'translateX(25%)';
+                    document.querySelector('#coding-class').style.transform = 'translateX(25%)';
+                    document.querySelector('#coding-class').style.opacity = '1';
+                    document.querySelector('#coding-text').style.opacity = '1';
+                    document.querySelector('#coding-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#coding').style.transform = 'translateX(4vw)';
+                    document.querySelector('#coding').style.opacity = '0';
+                    document.querySelector('#coding').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#coding-class').style.transform = 'translateX(calc(25% + 3vw))';
+                    document.querySelector('#coding-class').style.opacity = '0';
+                    document.querySelector('#coding-text').style.opacity = '0';
+                    document.querySelector('#coding-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+                if(scene == 13 || scene == 131 || scene == 132){
+                    viz._subscribedObjects.io.setLabelVisibility(true);
+                    viz._subscribedObjects.europa.setLabelVisibility(true);
+                    document.querySelector('.jupiter-moons').style.opacity = '1';
+                    document.querySelector('.jupiter-moons').style.display = 'block';
+                    document.querySelector('.jupiter-moons').style.zIndex = '0';
+                }else{
+                    viz._subscribedObjects.io.setLabelVisibility(false);
+                    viz._subscribedObjects.europa.setLabelVisibility(false);
+                    document.querySelector('.jupiter-moons').style.opacity = '0';
+                    document.querySelector('.jupiter-moons').style.display = 'none';
+                    document.querySelector('.jupiter-moons').style.zIndex = '-2';
+                }
+                if(scene == 131){
+                    await sleep(300);
+                    document.querySelector('#web').style.transform = 'translateX(0%)';
+                    document.querySelector('#web').style.opacity = '1';
+                    document.querySelector('#web').style.transform = 'translateX(25%)';
+                    document.querySelector('#web-class').style.transform = 'translateX(25%)';
+                    document.querySelector('#web-class').style.opacity = '1';
+                    document.querySelector('#web-text').style.opacity = '1';
+                    document.querySelector('#web-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#web').style.transform = 'translateX(4vw)';
+                    document.querySelector('#web').style.opacity = '0';
+                    document.querySelector('#web').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#web-class').style.transform = 'translateX(calc(25% + 3vw))';
+                    document.querySelector('#web-class').style.opacity = '0';
+                    document.querySelector('#web-text').style.opacity = '0';
+                    document.querySelector('#web-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+                if(scene == 132){
+                    await sleep(300);
+                    document.querySelector('#cfiller').style.transform = 'translateX(0%)';
+                    document.querySelector('#cfiller').style.opacity = '1';
+                    document.querySelector('#cfiller').style.transform = 'translateX(25%)';
+                    document.querySelector('#cfiller-class').style.transform = 'translateX(25%)';
+                    document.querySelector('#cfiller-class').style.opacity = '1';
+                    document.querySelector('#cfiller-text').style.opacity = '1';
+                    document.querySelector('#cfiller-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#cfiller').style.transform = 'translateX(4vw)';
+                    document.querySelector('#cfiller').style.opacity = '0';
+                    document.querySelector('#cfiller').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#cfiller-class').style.transform = 'translateX(calc(25% + 3vw))';
+                    document.querySelector('#cfiller-class').style.opacity = '0';
+                    document.querySelector('#cfiller-text').style.opacity = '0';
+                    document.querySelector('#cfiller-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+                if(scene == 22){
+                    await sleep(300);
+                    document.querySelector('#community').style.transform = 'translateX(0%)';
+                    document.querySelector('#community').style.opacity = '1';
+                    document.querySelector('#community').style.transform = 'translateX(25%)';
+                    document.querySelector('#community-class').style.transform = 'translateX(25%)';
+                    document.querySelector('#community-class').style.opacity = '1';
+                    document.querySelector('#community-text').style.opacity = '1';
+                    document.querySelector('#community-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#community').style.transform = 'translateX(4vw)';
+                    document.querySelector('#community').style.opacity = '0';
+                    document.querySelector('#community').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#community-class').style.transform = 'translateX(calc(25% + 3vw))';
+                    document.querySelector('#community-class').style.opacity = '0';
+                    document.querySelector('#community-text').style.opacity = '0';
+                    document.querySelector('#community-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+                if(scene == 21){
+                    await sleep(300);
+                    document.querySelector('#science').style.transform = 'translateX(0%)';
+                    document.querySelector('#science').style.opacity = '1';
+                    document.querySelector('#science').style.transform = 'translateX(25%)';
+                    document.querySelector('#science-class').style.transform = 'translateX(25%)';
+                    document.querySelector('#science-class').style.opacity = '1';
+                    document.querySelector('#science-text').style.opacity = '1';
+                    document.querySelector('#science-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#science').style.transform = 'translateX(4vw)';
+                    document.querySelector('#science').style.opacity = '0';
+                    document.querySelector('#science').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#science-class').style.transform = 'translateX(calc(25% + 3vw))';
+                    document.querySelector('#science-class').style.opacity = '0';
+                    document.querySelector('#science-text').style.opacity = '0';
+                    document.querySelector('#science-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+                if(scene == 21 || scene == 211 || scene == 212 || scene == 213){
+                    viz._subscribedObjects.titan.setLabelVisibility(true);
+                    viz._subscribedObjects.enceladus.setLabelVisibility(true);
+                    viz._subscribedObjects.iapetus.setLabelVisibility(true);
+                    document.querySelector('.saturn-moons').style.opacity = '1';
+                    document.querySelector('.saturn-moons').style.display = 'block';
+                    document.querySelector('.saturn-moons').style.zIndex = '0';
+                }else{
+                    viz._subscribedObjects.titan.setLabelVisibility(false);
+                    viz._subscribedObjects.enceladus.setLabelVisibility(false);
+                    viz._subscribedObjects.iapetus.setLabelVisibility(false);
+                    document.querySelector('.saturn-moons').style.opacity = '0';
+                    document.querySelector('.saturn-moons').style.display = 'none';
+                    document.querySelector('.saturn-moons').style.zIndex = '-2';
+                }
+                if(scene == 211){
+                    await sleep(300);
+                    document.querySelector('#astronomy').style.transform = 'translateX(0%)';
+                    document.querySelector('#astronomy').style.opacity = '1';
+                    document.querySelector('#astronomy').style.transform = 'translateX(25%)';
+                    document.querySelector('#astronomy-class').style.transform = 'translateX(25%)';
+                    document.querySelector('#astronomy-class').style.opacity = '1';
+                    document.querySelector('#astronomy-text').style.opacity = '1';
+                    document.querySelector('#astronomy-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#astronomy').style.transform = 'translateX(4vw)';
+                    document.querySelector('#astronomy').style.opacity = '0';
+                    document.querySelector('#astronomy').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#astronomy-class').style.transform = 'translateX(calc(25% + 3vw))';
+                    document.querySelector('#astronomy-class').style.opacity = '0';
+                    document.querySelector('#astronomy-text').style.opacity = '0';
+                    document.querySelector('#astronomy-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+                if(scene == 212){
+                    await sleep(300);
+                    document.querySelector('#paleontology').style.transform = 'translateX(0%)';
+                    document.querySelector('#paleontology').style.opacity = '1';
+                    document.querySelector('#paleontology').style.transform = 'translateX(25%)';
+                    document.querySelector('#paleontology-class').style.transform = 'translateX(25%)';
+                    document.querySelector('#paleontology-class').style.opacity = '1';
+                    document.querySelector('#paleontology-text').style.opacity = '1';
+                    document.querySelector('#paleontology-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#paleontology').style.transform = 'translateX(4vw)';
+                    document.querySelector('#paleontology').style.opacity = '0';
+                    document.querySelector('#paleontology').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#paleontology-class').style.transform = 'translateX(calc(25% + 3vw))';
+                    document.querySelector('#paleontology-class').style.opacity = '0';
+                    document.querySelector('#paleontology-text').style.opacity = '0';
+                    document.querySelector('#paleontology-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+                if(scene == 213){
+                    await sleep(300);
+                    document.querySelector('#engineering').style.transform = 'translateX(0%)';
+                    document.querySelector('#engineering').style.opacity = '1';
+                    document.querySelector('#engineering').style.transform = 'translateX(25%)';
+                    document.querySelector('#engineering-class').style.transform = 'translateX(25%)';
+                    document.querySelector('#engineering-class').style.opacity = '1';
+                    document.querySelector('#engineering-text').style.opacity = '1';
+                    document.querySelector('#engineering-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#engineering').style.transform = 'translateX(4vw)';
+                    document.querySelector('#engineering').style.opacity = '0';
+                    document.querySelector('#engineering').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#engineering-class').style.transform = 'translateX(calc(25% + 3vw))';
+                    document.querySelector('#engineering-class').style.opacity = '0';
+                    document.querySelector('#engineering-text').style.opacity = '0';
+                    document.querySelector('#engineering-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+                if(scene == 23){
+                    await sleep(300);
+                    document.querySelector('#public').style.transform = 'translateX(0%)';
+                    document.querySelector('#public').style.opacity = '1';
+                    document.querySelector('#public').style.transform = 'translateX(25%)';
+                    document.querySelector('#public-class').style.transform = 'translateX(25%)';
+                    document.querySelector('#public-class').style.opacity = '1';
+                    document.querySelector('#public-text').style.opacity = '1';
+                    document.querySelector('#public-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#public').style.transform = 'translateX(4vw)';
+                    document.querySelector('#public').style.opacity = '0';
+                    document.querySelector('#public').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#public-class').style.transform = 'translateX(calc(25% + 3vw))';
+                    document.querySelector('#public-class').style.opacity = '0';
+                    document.querySelector('#public-text').style.opacity = '0';
+                    document.querySelector('#public-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+                if(scene == 24){
+                    await sleep(300);
+                    document.querySelector('#debate').style.transform = 'translateX(0%)';
+                    document.querySelector('#debate').style.opacity = '1';
+                    document.querySelector('#debate').style.transform = 'translateX(25%)';
+                    document.querySelector('#debate-class').style.transform = 'translateX(25%)';
+                    document.querySelector('#debate-class').style.opacity = '1';
+                    document.querySelector('#debate-text').style.opacity = '1';
+                    document.querySelector('#debate-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#debate').style.transform = 'translateX(4vw)';
+                    document.querySelector('#debate').style.opacity = '0';
+                    document.querySelector('#debate').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#debate-class').style.transform = 'translateX(calc(25% + 3vw))';
+                    document.querySelector('#debate-class').style.opacity = '0';
+                    document.querySelector('#debate-text').style.opacity = '0';
+                    document.querySelector('#debate-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+                if(scene == 25){
+                    await sleep(300);
+                    document.querySelector('#math').style.transform = 'translateX(0%)';
+                    document.querySelector('#math').style.opacity = '1';
+                    document.querySelector('#math').style.transform = 'translateX(25%)';
+                    document.querySelector('#math-class').style.transform = 'translateX(25%)';
+                    document.querySelector('#math-class').style.opacity = '1';
+                    document.querySelector('#math-text').style.opacity = '1';
+                    document.querySelector('#math-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#math').style.transform = 'translateX(4vw)';
+                    document.querySelector('#math').style.opacity = '0';
+                    document.querySelector('#math').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#math-class').style.transform = 'translateX(calc(25% + 3vw))';
+                    document.querySelector('#math-class').style.opacity = '0';
+                    document.querySelector('#math-text').style.opacity = '0';
+                    document.querySelector('#math-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+                if(scene == 31){
+                    await sleep(300);
+                    document.querySelector('#heritage').style.transform = 'translateX(0%)';
+                    document.querySelector('#heritage').style.opacity = '1';
+                    document.querySelector('#heritage').style.transform = 'translateX(25%)';
+                    document.querySelector('#heritage-text').style.opacity = '1';
+                    document.querySelector('#heritage-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#heritage').style.transform = 'translateX(4vw)';
+                    document.querySelector('#heritage').style.opacity = '0';
+                    document.querySelector('#heritage').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#heritage-text').style.opacity = '0';
+                    document.querySelector('#heritage-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+                if(scene == 32){
+                    await sleep(300);
+                    document.querySelector('#sports').style.transform = 'translateX(0%)';
+                    document.querySelector('#sports').style.opacity = '1';
+                    document.querySelector('#sports').style.transform = 'translateX(25%)';
+                    document.querySelector('#sports-text').style.opacity = '1';
+                    document.querySelector('#sports-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#sports').style.transform = 'translateX(4vw)';
+                    document.querySelector('#sports').style.opacity = '0';
+                    document.querySelector('#sports').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#sports-text').style.opacity = '0';
+                    document.querySelector('#sports-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+                if(scene == 33){
+                    await sleep(300);
+                    document.querySelector('#closing').style.transform = 'translateX(0%)';
+                    document.querySelector('#closing').style.opacity = '1';
+                    document.querySelector('#closing').style.transform = 'translateX(25%)';
+                    document.querySelector('#closing-text').style.opacity = '1';
+                    document.querySelector('#closing-text').style.transform = 'translateX(25%)';
+                }else{
+                    document.querySelector('#closing').style.transform = 'translateX(4vw)';
+                    document.querySelector('#closing').style.opacity = '0';
+                    document.querySelector('#closing').style.transform = 'translateX(calc(25% + 4vw))';
+                    document.querySelector('#closing-text').style.opacity = '0';
+                    document.querySelector('#closing-text').style.transform = 'translateX(calc(25% + 2vw))';
+                }
+            });
+        }
+        sceneChange();
+    </script>
+</html>

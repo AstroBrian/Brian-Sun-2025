@@ -199,8 +199,8 @@
         <h3 class="nav-intro">
             Use this navigation menu to explore my portfolio!
         </h3>
-        <h2 class="responsiveness">
-            Note: This webpage wasn't designed for mobile users. For best performance, please use a larger screen and a more powerful processor. 
+        <h2 class="responsiveness" style="display: none; opacity: 0; z-index: -10">
+            This page wasn't designed for mobile devices. <br> Please switch to a desktop and use Google Chrome for the best experience.
         </h2>
         <h1 class="main-interests-title" style="display: none">
             Main Interests
@@ -652,14 +652,6 @@
             $('.home-intro').css({'display': 'block'});
             $('.home-description').css({'display': 'block'});
         });
-
-        async function note(){
-            await sleep(10000);
-            document.querySelector('.responsiveness').style.opacity = '0';
-            await sleep(2000);
-            document.querySelector('.responsiveness').style.display = 'none';
-        }
-        note();
 
         function navInteraction(){
             let start = false; 

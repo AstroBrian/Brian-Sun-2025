@@ -1260,18 +1260,6 @@ nav {
   opacity: 1;
 }
 
-.responsiveness {
-  position: absolute;
-  bottom: 0;
-  text-align: center;
-  left: 0;
-  right: 0;
-  font-size: 0.7rem;
-  font-family: 'Open Sans', sans-serif;
-  -webkit-transition: all 2s ease;
-  transition: all 2s ease;
-}
-
 /*Fill Animation*/
 @-webkit-keyframes fill {
   from {
@@ -1357,6 +1345,20 @@ nav {
   }
   svg {
     width: 50vw;
+  }
+  .responsiveness {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    opacity: 1;
+    z-index: 100;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
